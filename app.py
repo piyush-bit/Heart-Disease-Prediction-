@@ -56,8 +56,3 @@ def predict():
             app.logger.error(f"Error during prediction: {e}")
             return render_template('index.html', prediction_result="An error occurred. Please check your input.")
     return render_template('index.html', prediction_result="")
-
-if __name__ == '__main__':
-    print("Starting the Flask app...")
-    app.run(host='0.0.0.0', port=8080)
-
