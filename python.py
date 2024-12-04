@@ -54,4 +54,5 @@ def predict():
     return render_template('index.html', prediction_result="")
 
 if name == 'main':
+    print("running on port 5000")
     app.run(host='0.0.0.0', port=5000)  # No debug mode for production
