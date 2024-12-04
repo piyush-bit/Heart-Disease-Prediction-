@@ -53,6 +53,6 @@ def predict():
             return render_template('index.html', prediction_result="An error occurred. Please check your input.")
     return render_template('index.html', prediction_result="")
 
-if name == 'main':
+if __name__ == '__main__':
     print("running on port 5000")
     app.run(host='0.0.0.0', port=5000)  # No debug mode for production
