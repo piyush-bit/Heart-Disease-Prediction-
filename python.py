@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request ,send_from_directory
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -29,6 +29,10 @@ model.fit(x_train, y_train)
 @app.route('/')
 def index():
     return render_template('index.html')  # Ensure `index.html` is in the templates/ directory
+
+@app.route('/style.css')
+def css():
+    return send_from_directory('templates', 'style.css')
 
 @app.route('/predict', methods=['POST'])
 def predict():
