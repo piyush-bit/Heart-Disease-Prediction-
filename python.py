@@ -56,7 +56,9 @@ def predict():
             app.logger.error(f"Error during prediction: {e}")
             return render_template('index.html', prediction_result="An error occurred. Please check your input.")
     return render_template('index.html', prediction_result="")
-
+    
 if __name__ == '__main__':
+    from waitress import serve
+    serve(app, host='0.0.0.0', port=5000)  # Debug mode
     print("running on port 5000")
-    app.run(host='0.0.0.0', port=5000)  # No debug mode for production
+
